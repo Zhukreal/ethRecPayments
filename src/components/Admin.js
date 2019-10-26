@@ -4,6 +4,7 @@ import logo from '../images/cryptoadop.jpg'
 import withWeb3 from './../utils/withWeb3';
 import {ADRESS, SMART} from './../utils/static';
 import {Route, Switch} from 'react-router-dom'
+import history from "../history";
 
 const Admin = function  ({web3, contract}) {
     let [account, setAccount] = useState('')
@@ -40,7 +41,7 @@ const Admin = function  ({web3, contract}) {
             setHash(res.transactionHash)
             debugger
             setTimeout(() => {
-                window.location.href='/info'
+                history.push('/list_payments')
             }, 1000)
         } catch (e) {
             console.log(e);
