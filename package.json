@@ -5,6 +5,8 @@
   "dependencies": {
     "async": "^3.0.1",
     "axios": "^0.17.1",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
     "font-awesome": "^4.7.0",
     "history": "^4.7.2",
     "i": "^0.3.6",
@@ -30,7 +32,7 @@
   "devDependencies": {
     "eslint-plugin-react-hooks": "^1.6.1"
   },
-  "proxy": "http://146.185.156.62:3000",
+  "proxy": "http://localhost:8080",
   "browserslist": [
     ">0.2%",
     "not dead",
