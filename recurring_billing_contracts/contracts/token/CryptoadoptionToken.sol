@@ -43,15 +43,15 @@ library SafeMath {
 }
 
 /**
- * WinTeam token contract. It implements the next capabilities:
+ * Cryptoadoption token contract. It implements the next capabilities:
  * 1. Standard ERC20 functionality. [OK]
  * 2. Additional utility function approveAndCall. [OK]
  * 3. Function to rescue "lost forever" tokens, which were accidentally sent to the contract address. [OK]
  * 4. Additional transfer and approve functions which allow to distinct the transaction signer and executor,
- *    which enables accounts with no Ether on their balances to make token transfers and use WinTeam services. [OK]
+ *    which enables accounts with no Ether on their balances to make token transfers and use Cryptoadoption services. [OK]
  * 5. Token sale distribution rules. [OK]
  */
-contract WinTeamToken {
+contract CryptoadoptionToken {
 
     using SafeMath for uint256;
 
@@ -471,9 +471,9 @@ contract WinTeamToken {
 
         require(totalSupply > 0);
 
-        uint256 remaining = totalSupply.mul(40).div(60); // Portion of tokens for WinTeam (40%)
+        uint256 remaining = totalSupply.mul(40).div(60); // Portion of tokens for Cryptoadoption (40%)
 
-        // To make the total supply rounded (no fractional part), subtract the fractional part from WinTeam's balance
+        // To make the total supply rounded (no fractional part), subtract the fractional part from Cryptoadoption's balance
         uint256 fractionalPart = remaining.add(totalSupply) % (uint256(10) ** decimals);
         remaining = remaining.sub(fractionalPart); // Remove the fractional part to round the totalSupply
 

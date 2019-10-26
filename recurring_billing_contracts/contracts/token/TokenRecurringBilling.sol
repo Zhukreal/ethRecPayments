@@ -1,10 +1,3 @@
-/**
- * Token recurring billing smart contracts, which enable recurring billing feature for ERC20-compatible tokens.
- * Developed by WinTeam.GG contributors. Visit winteam.gg and github.com/winteam-gg/smart-contracts for more info.
- * Copyright © 2019 WINTEAM.
- * Licensed under the Apache License, Version 2.0 (the "License").
- */
-
 pragma solidity 0.5.2;
 
 interface ERC20CompatibleToken {
@@ -48,7 +41,6 @@ library SafeMath {
 /**
  * Factory that creates recurring billing smart contracts for specified token.
  * You can enable recurring billing for your own ERC20-compatible tokens!
- * Find the documentation here: https://github.com/winteam-gg/smart-contracts#smart-contracts-documentation
  */
 contract RecurringBillingContractFactory {
 

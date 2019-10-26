@@ -3,7 +3,7 @@ pragma solidity ^0.4.18;
 import "./StorageInterface.sol";
 import "./BasicStorage.sol";
 
-contract WinTeamStorage is BasicStorage {
+contract CryptoadoptionStorage is BasicStorage {
 
     mapping(bytes32 => uint) uintStorage;
     mapping(bytes32 => string) stringStorage;
@@ -12,7 +12,7 @@ contract WinTeamStorage is BasicStorage {
     mapping(bytes32 => bool) booleanStorage;
     mapping(bytes32 => int) intStorage;
 
-    function WinTeamStorage (address[] initialOwners) BasicStorage(initialOwners) public {}
+    function CryptoadoptionStorage (address[] initialOwners) BasicStorage(initialOwners) public {}
 
     function getUint (bytes32 record) public view returns (uint) { return uintStorage[record]; }
     function getString (bytes32 record) public view returns (string) { return stringStorage[record]; }
