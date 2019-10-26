@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Roboto-Regular';
+    font-style: normal;
+    font-weight: 300;
+    src: url("./Roboto/Roboto-Regular.ttf") format('truetype')
+}
+@font-face {
+    font-family: 'Bebas-Neue';
+    font-style: normal;
+    font-weight: 300;
+    src: url("./BebasNeue.otf") format('truetype')
+}
