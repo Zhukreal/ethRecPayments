@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {withRouter} from "react-router"
 import axios from "axios";
+import withWeb3 from './utils/withWeb3';
 
 import {Context} from "./Context";
 import Routes from './Routes'
