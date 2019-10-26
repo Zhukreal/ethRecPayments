@@ -1,3 +1,1 @@
-# Cryptoadoption 
-
-Decentralized recurring payment solution
+![](./assets/plans.png)
