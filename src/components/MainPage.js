@@ -225,7 +225,7 @@ const MainPage = function  ({web3, contract}) {
                                     </div>
                                 </div>
                                 <div className="card-link">
-                                    <a className='z-link' target='_blank' href={`https://ropsten.etherscan.io/address/0x1984a9ccb483e1e45c08dc095fd123e64022a6a5`}>View</a> reccuring billing smart contract
+                                    <a className='z-link' target='_blank' href={`https://ropsten.etherscan.io/address/0x1984a9ccb483e1e45c08dc095fd123e64022a6a5#code`}>View</a> reccuring billing smart contract
                                 </div>
 
                                 <button className="z-btn z-btn-footer" onClick={onPay} disabled={loading}>Pay</button>

@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import logo from '../images/cryptoadop.jpg'
 // import Web3 from 'web3';
 import withWeb3 from './../utils/withWeb3';
 import {ADRESS, SMART} from './../utils/static';
 import moment from 'moment'
+
 
 const Info = function  ({web3, contract}) {
     let [account, setAccount] = useState('')
@@ -11,15 +12,31 @@ const Info = function  ({web3, contract}) {
     let [loading, setLoading] = useState(true)
 
 
-    console.log('web3', web3)
-    console.log('contract', contract)
-
+    let kef = 0;
 
     useEffect(() =>  {
         getInfo()
+        // setInterval(() => {
+        //     getInfo()
+        //     setLoading(false)
+        // }, 5000)
     }, []);
 
-    const getInfo = async () => {
+    const getInfo = () => {
+        // let item = {
+        //     id: kef,
+        //     address: '0xbA905C35f9711e7466B86e40DCc8713798C62732',
+        //     timestamp: new Date().getTime() + kef*300000
+        // }
+        // setList(list => list.concat(item));
+        // ++kef
+
+
+        // list.push(item)
+
+
+        // setList(list)
+
         try {
             window.ethereum.enable().then( async (account) =>{
                 const defaultAccount = account[0]
@@ -34,7 +51,6 @@ const Info = function  ({web3, contract}) {
                 setLoading(false)
                 setList(res)
 
-                console.log(res)
             })
         } catch (e) {
             setLoading(false)
@@ -42,6 +58,7 @@ const Info = function  ({web3, contract}) {
 
     }
 
+    console.log(list)
 
     return (
         <>
@@ -70,25 +87,25 @@ const Info = function  ({web3, contract}) {
                             </thead>
                             <tbody>
                                 {list.map((item, key) => {
-                                    let returnValues = item.returnValues || {}
-                                    let date1 = new Date()
+                                    // let returnValues = item.returnValues || {}
+                                    // let date1 = new Date()
                                     // let date2 = new Date()
 
-                                    if(returnValues.timestamp) {
-                                        date1 = moment(returnValues.timestamp * 1000).format('DD.MM.YYYY, h:mm a');
-                                    }
+                                    // if(returnValues.timestamp) {
+                                    //     date1 = moment(returnValues.timestamp * 1000).format('DD.MM.YYYY, h:mm a');
+                                    // }
                                     // if(returnValues.nextChargeTimestamp) {
                                     //     date2 = moment(returnValues.nextChargeTimestamp * 1000).format('DD.MM.YYYY, h:mm a');
                                     // }
 
                                     // debugger
                                     return (
-                                        <tr key={key}>
+                                        <tr key={item.id}>
                                             <td>{item.address}</td>
-                                            <td>{date1}</td>
+                                            <td>{moment(item.timestamp).format('DD.MM.YYYY, h:mm a')}</td>
                                             <td>5 min</td>
                                             <td>DAI</td>
-                                            <td>10</td>
+                                            <td>9.99</td>
                                         </tr>
                                     )
                                 })}
